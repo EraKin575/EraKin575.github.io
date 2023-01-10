@@ -11,8 +11,8 @@ const Navbar = () => {
     
     }
     const styles={
-        navBackground:'flex h-min items-center justify-center flex-wrap bg-gray-800 p-6 top-0 right-0 ',
-        navItems:'flex gap-9 text-xl text-white',
+        navBackground:' h-screen items-center justify-center flex-wrap bg-gray-800 p-6 top-0 right-0 ',
+        navItems:' gap-9 text-xl text-white',
         navItem:`text-white text-lg pb-4 rounded-lg p-3 font-semibold cursor-pointer hover:text-blue-500 hover:bg-slate-700`
     }
   return (

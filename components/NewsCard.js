@@ -3,10 +3,11 @@ import Link from 'next/link'
 
 const NewsCard = ({title,source,summary,linkTo,imageUrl}) => {
 
-    styles={
-        card:`w-[300px] h-[300px] bg-gray-800 rounded-lg p-4`,
+    const styles={
+        card:`w-max h-[300px] bg-gray-800 rounded-lg p-4`,
         heading:'flex ',
-        headingText:'text-white text-xl font-semibold',
+        headingText:'text-white text- w-[15%] text-xl font-semibold',
+        image:'w-[10%] h-[10%] rounded-lg',
 
     }
   return (
@@ -14,12 +15,12 @@ const NewsCard = ({title,source,summary,linkTo,imageUrl}) => {
     <div className={styles.card}>
         <div className={styles.heading}>
             <h1 className={styles.headingText}>{title}</h1>
-            <img src={imageUrl} alt="imageUrl" />
+            <img src={imageUrl} alt="imageUrl" className={styles.image} />
 
 
         </div>
         <div className={styles.summary}>
-            <p>{summary}</p>
+            
         </div>
 
     </div>
