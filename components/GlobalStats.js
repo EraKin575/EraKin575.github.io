@@ -1,34 +1,30 @@
 import React from 'react'
+import {Convert,priceChange} from '../Conversion';
 
-const GlobalStats = ({total24Volume,totalMarketCap,totalExhanges,totalMarkets}) => {
+const GlobalStats = ({total24hVolume,totalMarketCap,totalExchanges,totalMarkets}) => {
     const styles={
-        globalStats:'grid cols-4 row-2 gap-5',
-        globalStatsItem:'font-semibold text-xl flex'
+        globalStats:'grid grid-cols-2 grid-rows-2 gap-8 justify-items-evenly pb-4',
+        globalStatsItem:'font-semibold text-xl '
     }
-    const propsArray=[total24Volume,totalMarketCap,totalExhanges,totalMarkets]
+    const propsArray=[total24hVolume,totalMarketCap,totalExchanges,totalMarkets]
+    const labels=['Volume(24h)','Total Market Cap','Total Exchanges','Total Markets']
+    let globalStatsArray=[]
+    for(let i=0;i<propsArray.length;i++){
 
-  return (
-    <div className={styles.globalStats}>
-        {propsArray.map((prop)=>{
-            return(
-                <div className={styles.globalStatsItem}>
-                    <div className="w-1/2 h-1/2 bg-blue-500 rounded-lg"></div>
-                    <p>{prop}</p>
-                </div>
-              
-            )
-        }
-        )}
+        propsArray[i]=Convert(propsArray[i])
+        globalStatsArray.push (
+            <div className={styles.globalStatsItem}>
+                <p>{labels[i]}</p>
+                <p className={'font-normal'}>{propsArray[i]}</p>
+            </div>
+        )
+    }
 
-
-        
-
-        
-
-        
-
-
-    </div>
+  return (    
+                <div className={styles.globalStats}>
+                    {globalStatsArray}
+   
+                </div>   
 
   )
 }

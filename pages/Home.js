@@ -18,12 +18,12 @@ const Home = () => {
       .then(response => response.json())
       .then(response => setdata(response))
       .catch(err => console.error(err));
-  })
+  },[])
 
   const styles={
     homePage:'p-10',
-    headingText:'text-3xl font-montserrat',
-    cryptoInfo:'grid grid-cols-5 gap-5'
+    headingText:'text-3xl font-montserrat pb-4 font-bold',
+    cryptoInfo:'grid grid-cols-5 gap-3 pl-0'
 
 
 
@@ -32,19 +32,18 @@ const Home = () => {
     <div className={styles.homePage}>
       <h1 className={styles.headingText}>Global Stats</h1>
       <GlobalStats 
-      total24hVolume={data?.data?.stats?.total24Volume}
+      total24hVolume={data?.data?.stats?.total24hVolume}
       totalMarketCap={data?.data?.stats?.totalMarketCap} 
       totalExhanges={data?.data?.stats?.totalExchanges} 
       totalMarkets={data?.data?.stats?.totalMarkets} 
       />
-      <h1 className='text-4xl'>Top 10 Cryptocurrencies</h1>
+      <h1 className='text-4xl pb-6 font-bold'>Top 10 Cryptocurrencies</h1>
       <div className={styles.cryptoInfo}>
-              {data?.data?.coins?.filter((item,idx)=>idx<11).map((coin)=>{
+              {data?.data?.coins?.filter((item,idx)=>idx<10).map((coin)=>{
         return (
           <CryptoCard
           imageUrl={coin.iconUrl}
           name={coin.name}
-          symbol={coin.symbol}
           prices={coin.price}
           marketCap={coin.marketCap}
           change={coin.change}

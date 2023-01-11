@@ -1,44 +1,51 @@
 import React from 'react'
+import {Convert,priceChange} from '../Conversion';
+
+import Image from 'next/image';
+import { Avatar, Card } from 'antd';
+const { Meta } = Card;
+
 
 const CryptoCard = ({imageUrl,name,marketCap,prices,change}) => {
-    const styles={
-        card:' h-[300px] flex-col w-min bg-gray-300 rounded-lg p-4',
-        header:'flex',
-        changePositive:'',
-        changeNegative:'',
-        image:'w-10 h-10 mt-2 ',
-        cryptoName:'px-2 text-xl font-semibold pt-3',
-    }
-    let iconType;
-
-   if(imageUrl.includes('.svg')){
-    iconType='image/svg+xml'
-   }
-   else if(imageUrl.includes('.png')){
-    iconType='image/png'
-    }
-
-    
+  const styles={
+    card:'m-4',
+    headers:'flex font-bold pl-5 pt-3',
+  }
   return (
-
     <div className={styles.card}>
-        <div className={styles.header}>
-            <img src={imageUrl} alt="imageUrl" className={styles.image} type={iconType} />
-            <p1 className={styles.cryptoName}>{name}</p1>
-        </div>
-    <p1>{marketCap}</p1>
-    <p1>{prices}</p1>
-    <p1>{change}</p1>
+    <Card
+     
+      bordered={false}
+     
+      style={{
+        width: 180,
+        height: 160,
+        backgroundColor:'#F1F1F1',
+        margin:'auto',
+        
+      }}
+     
+    >
+       <Meta
+      avatar={<Avatar src={imageUrl} />}
+      title={name}
+      
+    />
     
-  
+      <div className='float-left pt-[20%]'>
+      <p className='w-max'>{`Market Cap:${Convert(marketCap)}`}</p>
+      <p>{`Price:${Convert(prices)}`}</p>
+      <p className={priceChange(change)}>{`Change:${(change)}`}</p>
+      </div>
+    </Card>
     </div>
-    
-
-        
-        
-  
-  
   )
+  
+        
+        
+  
+  
+  
 }
 
 export default CryptoCard
