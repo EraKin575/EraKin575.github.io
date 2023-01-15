@@ -8,8 +8,8 @@ const { Meta } = Card;
 
 const CryptoCard = ({imageUrl,name,marketCap,prices,change}) => {
   const styles={
-    card:'m-4',
-    headers:'flex font-bold pl-5 pt-3',
+    card:'m-1 font-montserrat',
+    headers:'flex font-bold pl-3 pt-3',
   }
   return (
     <div className={styles.card}>
@@ -20,8 +20,9 @@ const CryptoCard = ({imageUrl,name,marketCap,prices,change}) => {
       style={{
         width: 180,
         height: 160,
+        
         backgroundColor:'#F1F1F1',
-        margin:'auto',
+        fontFamily:'Montserrat',
         
       }}
      
@@ -32,10 +33,12 @@ const CryptoCard = ({imageUrl,name,marketCap,prices,change}) => {
       
     />
     
-      <div className='float-left pt-[20%]'>
-      <p className='w-max'>{`Market Cap:${Convert(marketCap)}`}</p>
-      <p>{`Price:${Convert(prices)}`}</p>
-      <p className={priceChange(change)}>{`Change:${(change)}`}</p>
+      <div className='float-left pt-[15%]'>
+      <p className='w-max'><span className='font-bold pl-0'>{`Market Cap:`}</span>{`${Convert(marketCap)}`}</p>
+      <p className='w-max'><span className='font-bold'>{`Price`}</span>{`${Convert(prices)}`}</p>
+      <p className='w-max'><span className='font-bold'>{`Change:`}</span><span className={priceChange(change)}>{`${(change)}`}</span></p>
+  
+   
       </div>
     </Card>
     </div>

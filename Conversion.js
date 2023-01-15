@@ -4,18 +4,18 @@
         x=Number(x);
     }
     if(Number(x)>1000000000){
-        return "$"+ Number(x/1000000000).toFixed(4) + "B";
+        return "$"+ Number(x/1000000000).toFixed(2) + "B";
     }
     if(Number(x)>1000000){
-            return "$"+Number(x/1000000).toFixed(4) + "M";
+            return "$"+Number(x/1000000).toFixed(2) + "M";
         }  
         
         
     if(Number(x)>1000){
-        return "$"+Number(x/1000).toFixed(4) + "K";
+        return "$"+Number(x/1000).toFixed(2) + "K";
     }
     else{
-        return "$"+Number(x).toFixed(4)
+        return "$"+Number(x).toFixed(2)
     }
        
     
@@ -25,13 +25,11 @@
     const changePositive='text-green-500';
     const changeNegative='text-red-500'
 
-    if(Number(x)>0){
+    if((x)>0){
         return changePositive;      
     }
 
-    else{
-        return changeNegative;
-    }
+    return changeNegative
 
 }
 export {Convert,priceChange}

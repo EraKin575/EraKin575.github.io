@@ -22,7 +22,7 @@ const Home = () => {
 
   const styles={
     homePage:'p-10',
-    headingText:'text-3xl font-montserrat pb-4 font-bold',
+    headingText:'text-3xl text-center font-montserrat pb-4 font-bold',
     cryptoInfo:'grid grid-cols-5 gap-3 pl-0'
 
 
