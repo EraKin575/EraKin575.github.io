@@ -222,8 +222,9 @@ const Cryptocurrencies = () => {
         {data?
         <ConfigProvider
         theme={{
-            token:{
+            Table:{
                 fontFamily:'Montserrat,sans-serif',
+                backgroundColor:'black'
                 
                 
             },
@@ -251,9 +252,7 @@ const Cryptocurrencies = () => {
           }
         }
       
-        style={{
-            fontFamily:'Montserrat,sans-serif'
-        }}
+       
      
       
        

@@ -26,7 +26,7 @@ const CoinData = () => {
       coinData:'p-5',
         headers:'flex font-bold pl-3 pt-3 gap-2 text-xl pb-4 border-b-2 ',
         rank:'b-2 border-2 border-gray-300 rounded-lg px-1 font-normal text-gray-500',
-        symbol:'text-gray-500',
+        symbol:'text-gray-500 text-sm pl-2 pt-1',
         price:'pl-8 text-gray-500',
         info:'flex gap-5 font-bold pb-4 pt-2'
     }
@@ -67,7 +67,7 @@ const CoinData = () => {
       <div className='flex'>
       <div className='flex-col'>
       <ValueStats data={data}/>
-      <SupplyStats data={data}/>
+      <SupplyStats name={data.name} data={data.supply}/>
       </div>
       <div className='w-[70%]'>
       <h1 className='text-2xl font-bold'>{`About ${data.name}`}</h1>

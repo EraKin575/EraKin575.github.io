@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import GlobalStats from '../components/GlobalStats'
 import CryptoCard from '../components/CryptoCard'
 
-const Home = () => {
+const Homepage = () => {
   const [data,setdata]=useState()
 
   useEffect(()=>{
@@ -34,7 +34,7 @@ const Home = () => {
       <GlobalStats 
       total24hVolume={data?.data?.stats?.total24hVolume}
       totalMarketCap={data?.data?.stats?.totalMarketCap} 
-      totalExhanges={data?.data?.stats?.totalExchanges} 
+      totalExchanges={data?.data?.stats?.totalExchanges} 
       totalMarkets={data?.data?.stats?.totalMarkets} 
       />
       <h1 className='text-4xl pb-6 font-bold'>Top 10 Cryptocurrencies</h1>
@@ -65,4 +65,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Homepage

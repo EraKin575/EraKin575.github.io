@@ -11,7 +11,7 @@ const GlobalStats = ({total24hVolume,totalMarketCap,totalExchanges,totalMarkets}
     let globalStatsArray=[]
     for(let i=0;i<propsArray.length;i++){
 
-        propsArray[i]=Convert(propsArray[i])
+    if(propsArray[i]!=totalExchanges && propsArray[i]!=totalMarkets){propsArray[i]=Convert(propsArray[i])}
         globalStatsArray.push (
             <div className={styles.globalStatsItem}>
                 <p>{labels[i]}</p>

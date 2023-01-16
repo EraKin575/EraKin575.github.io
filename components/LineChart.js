@@ -30,7 +30,7 @@ const LineChart = ({uuid}) => {
     const availableTimePeriods = ['1h','3h','12h','24h','7d','30d','3m','1y','3y','5y'];
     const timeArray=availableTimePeriods.map((item,idx)=>{
         return (
-            <p className={`font-medium  cursor-pointer text-sm rounded-lg p-2 hover:bg-gray-400 hover:text-blue-600 ${selectedTimePeriod==item && `bg-gray-400`} `} onClick={()=>{settimePeriod(item)
+            <p className={`font-medium  cursor-pointer font-medium text-sm rounded-lg p-2 hover:bg-gray-400 hover:text-blue-600 ${selectedTimePeriod==item && `bg-gray-400`} `} onClick={()=>{settimePeriod(item)
             setselectedTimePeriod(item)
             }}>{(item).toUpperCase()}</p>
         )
@@ -61,7 +61,7 @@ const LineChart = ({uuid}) => {
       }
     
       for (let i = 0; i < priceHistory?.data?.history?.length; i += 1) {
-        coinTimeStamp.push(new Date(priceHistory?.data?.history[i].timestamp*1000));
+        coinTimeStamp.push(new Date(priceHistory?.data?.history[i].timestamp*1000).toLocaleString())
       }
       const Linedata = {
         labels: coinTimeStamp,

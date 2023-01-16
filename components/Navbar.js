@@ -8,7 +8,7 @@ import {Tabs} from 'antd'
 const Navbar = () => {
     const router=useRouter();
     const [selected, setSelected] =useState(0)
-    let navItems=['Home','Cryptocurrencies']
+    let navItems=['Homepage','Cryptocurrencies']
    
     const onChange=(key)=>{
         router.push(`/${navItems[key-1]}`)
