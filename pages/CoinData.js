@@ -3,7 +3,7 @@ import { useRouter,Router } from 'next/router'
 import { Convert,priceChange } from '../Conversion';
 import ValueStats from '../components/ValueStats';
 import SupplyStats from '../components/SupplyStats';
-import LineChart from '../components/LineChart';
+import LineChart from '../components/LineChart.js';
 let parse = require('html-react-parser');
 const CoinData = () => {
   const [data,setData]=useState('');

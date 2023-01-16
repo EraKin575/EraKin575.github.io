@@ -1,6 +1,6 @@
 
 import '../styles/globals.css'
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 
 
 export default function App({ Component, pageProps }) {

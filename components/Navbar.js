@@ -1,3 +1,4 @@
+"use client"
 import React,{useState,useEffect} from 'react'
 import { useRouter,Router } from 'next/router'
 import Link from 'next/link'
@@ -8,6 +9,7 @@ const Navbar = () => {
     const router=useRouter();
     const [selected, setSelected] =useState(0)
     let navItems=['Home','Cryptocurrencies']
+   
     const onChange=(key)=>{
         router.push(`/${navItems[key-1]}`)
     }
@@ -27,10 +29,11 @@ const Navbar = () => {
             fontWeight:'bold',
             fontSize:'x-large'
         }}
-        defaultActiveKey='1'
+        defaultActiveKey='0'
         centered
         items={items}
         onChange={onChange}
+        
         />
         
 
